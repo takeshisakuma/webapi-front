@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input,
+button {
+  appearance: none;
+  font-family: inherit;
+  border-radius: 0;
+  font-size: 16px;
+  color: inherit;
+}
+
+input {
+  background-color: #eee;
+  border: 1px solid transparent;
+  transition: border 0.2s ease-out;
+  color: inherit;
+  outline: 0;
+}
+
+input:focus {
+  border-bottom: 1px solid#e74c3c;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #7f8c8d;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  position: relative;
+  background-color: #fafafa;
+}
+
+main {
+  background-color: white;
+  display: table;
+  margin: 20px auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  padding: 20px;
+}
+.overLay {
+  display: none;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+.overLay.active {
+  display: block;
+}
+.modalWindow {
+  display: none;
+  background-color: white;
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 20px;
+  width: 500px;
+}
+
+.modalWindow.active {
+  display: block;
+}
+
+.modalWindowTitle {
+  font-size: 1.6rem;
+  /*font-weight: bold;*/
+  background-color: #1664c0;
+  font-weight: bold;
+  color: white;
+  padding: 10px 20px;
+  letter-spacing: 10px;
+}
+.modalWindowForm {
+  margin-top: 20px;
+}
+.modalWindowApplyButton {
+  background: #16a085;
+  border: none;
+  border-bottom: 4px solid #434343;
+  border-radius: 4px;
+  color: #fff;
+  display: table;
+  line-height: 1;
+  margin: 60px auto 0;
+  outline: none;
+  padding: 15px 30px;
+  font-size: 1.6rem;
+  line-height: 1;
+  transition: background-color 0.2s ease-out, transform 0.2s ease-out,
+    border-bottom 0.2s ease-out;
+  user-select: none;
+  letter-spacing: 10px;
+  text-indent: 10px;
+}
+
+.modalWindowApplyButton:hover,
+.modalWindowApplyButton:focus {
+  background: #1abc9c;
+}
+.modalWindowApplyButton:active {
+  background: #006266;
+  border-bottom: 4px solid transparent;
+  transform: translateY(4px);
+}
+
+.modalWindowCancelButton {
+  background-color: white;
+  display: block;
+  font-size: 1rem;
+  padding: 10px 20px 5px 20px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: 0;
+  font-weight: normal;
+  border-bottom: none;
+  border: none;
+  border-bottom: 1px solid #333;
+  outline: none;
+}
+.modalWindowCancelButton:hover {
+  opacity: 0.5;
+}
+
+.createFormWrapper {
+  display: none;
+}
+.createFormWrapper.active {
+  display: block;
+}
+.patchFormWrapper {
+  display: none;
+}
+.patchFormWrapper.active {
+  display: block;
+}
+.deleteFormWrapper {
+  display: none;
+}
+.deleteFormWrapper.active {
+  display: block;
+}
+
+.formLabel {
+  width: 100%;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.formLabelIconMust {
+  background-color: #e53935;
+  color: white;
+  padding: 5px;
+  line-height: 1;
+  display: inline-block;
+  margin-right: auto;
+  margin-left: 5px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+.formLabelIconDisabled {
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  line-height: 1;
+  display: inline-block;
+  margin-left: 5px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+.formInput {
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.formInput[disabled] {
+  margin-top: 0px;
+  background-color: white;
+  border-bottom: gray 1px dotted;
+}
+
+.preCreateButton {
+  background-color: #e53935;
+  margin: 20px 20px 0 auto;
+  border: none;
+  color: white;
+  display: block;
+  padding: 10px;
+  font-size: 20px;
+  outline: none;
+  transition: background-color 0.2s ease-in-out;
+  letter-spacing: 10px;
+  text-indent: 10px;
+}
+
+.preCreateButton:hover {
+  cursor: pointer;
+  background-color: #e57373;
+}
+
+.preCreateButton:active {
+  background-color: #e53935;
+}
+/* 表組み */
+.dataTable {
+  margin: 0 auto;
+  background-color: white;
+
+  border-radius: 4px;
+  border-collapse: collapse;
+}
+
+.dataTable tr {
+  border-bottom: 1px solid #333;
+}
+
+.dataTable tr th {
+  padding: 20px;
+}
+.dataTable tr td {
+  padding: 20px;
+  border-bottom: 1px solid #333;
+}
+.dataTable tr:last-child td {
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+}
+.dataTable .tableButton {
+  background-color: #1664c0;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s ease-in-out;
+  letter-spacing: 5px;
+  text-indent: 5px;
+}
+
+.dataTable .tableButton:hover {
+  cursor: pointer;
+  background-color: #42a5f5;
+}
+.dataTable .tableButton:active {
+  background-color: #1664c0;
+}

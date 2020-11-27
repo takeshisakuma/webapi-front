@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="style.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&display=swap" rel="stylesheet">
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <main>
+    <button class="preCreateButton" data-js="preCreateButton">新規追加</button>
+    <p data-js="displaySpace"></p>
+  </main>
+
+  <div class="overLay" data-js="overLay">
+  </div>
+  <div class="modalWindow" data-js="modalWindow">
+
+    <div class="createFormWrapper" data-js="createFormWrapper">
+      <p class="modalWindowTitle">新規追加</p>
+      <form class="modalWindowForm" data-js="createForm">
+        <label for="createFormTitle" class="formLabel">タイトル<span class="formLabelIconMust">入力必須</span></label>
+        <input type="text" name="title" id="createFormTitle" class="formInput" data-js="createFormTitle" required>
+        <label for="createFormAuthor" class="formLabel">著者<span class="formLabelIconMust">入力必須</span></label>
+        <input type="text" name="author" id="createFormAuthor" class="formInput" data-js="createFormAutor" required>
+        <button type="submit" class="modalWindowApplyButton">送信</button>
+      </form>
+    </div>
+
+    <div class="patchFormWrapper" data-js="patchFormWrapper">
+      <p class="modalWindowTitle">更新</p>
+      <form class="modalWindowForm" data-js="patchForm">
+        <label for="patchFormId" class="formLabel">ID<span class="formLabelIconDisabled">編集不可</span></label>
+
+        <input type="text" name="title" id="patchFormId" class="formInput" data-js="patchFormId" disabled>
+        <label for="patchFormTitle" class="formLabel">タイトル<span class="formLabelIconMust">入力必須</span></label>
+
+        <input type="text" name="title" id="patchFormTitle" class="formInput" data-js="patchFormTitle" required>
+        <label for="patchFormAuthor" class="formLabel">著者<span class="formLabelIconMust">入力必須</span></label>
+
+        <input type="text" name="author" id="patchFormAuthor" class="formInput" data-js="patchFormAuthor" required>
+        <button type="submit" class="modalWindowApplyButton">更新</button>
+      </form>
+    </div>
+
+    <div class="deleteFormWrapper" data-js="deleteFormWrapper">
+      <p class="modalWindowTitle">削除</p>
+      <form class="modalWindowForm" data-js="deleteForm">
+        <label for="deleteFormId" class="formLabel">ID<span class="formLabelIconDisabled">編集不可</span></label>
+        <input type="text" name="title" id="deleteFormId" class="formInput" data-js="deleteFormId" disabled>
+        <label for="deleteFormTitle" class="formLabel">タイトル<span class="formLabelIconDisabled">編集不可</span></label>
+        <input type="text" name="title" id="deleteFormTitle" class="formInput" data-js="deleteFormTitle" disabled>
+        <label for="deleteFormAuthor" class="formLabel">著者<span class="formLabelIconDisabled">編集不可</span></label>
+        <input type="text" name="author" id="deleteFormAuthor" class="formInput" data-js="deleteFormAuthor" disabled>
+        <button type="submit" class="modalWindowApplyButton">削除</button>
+      </form>
+    </div>
+    <button data-js="modalHide" class="modalWindowCancelButton">キャンセル</button>
+
+  </div>
+
+</body>
+</html>
